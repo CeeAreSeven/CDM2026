@@ -415,7 +415,7 @@ function updateMatchContent(div, match) {
   const cp = currentPlayer;
   const r = getResult(match.id);
   const myProno = cp ? getProno(match.id, cp) : {h:'',a:''};
-  const isAdmin = cp === ADMIN;
+  const isAdmin = true;
 
   let allPronosHTML = '<div class="all-pronostics"><div class="all-pronostics-title">Pronostics du groupe</div><div class="all-grid">';
   PLAYERS.forEach(p => {
