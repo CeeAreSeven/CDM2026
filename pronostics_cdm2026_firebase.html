@@ -454,7 +454,7 @@ function updateMatchContent(div, match) {
           onchange="window._saveResult('${match.id}','h',this.value)" oninput="window._saveResult('${match.id}','h',this.value)" />
         <span>—</span>
         <input type="number" min="0" max="20" value="${r.a??''}" placeholder="—"
-          onchange="window._saveResult('${match.id}','a',this.value)" />
+          onchange="window._saveResult('${match.id}','a',this.value)" oninput="window._saveResult('${match.id}','a',this.value)" />
       </div>
       <span class="admin-badge">Admin</span>
     </div>` : (r.h!=null&&r.h!=='' ? `<div style="padding:5px 12px 8px;border-top:1px solid var(--border);font-size:12px;color:var(--green)">Résultat : <strong>${r.h} — ${r.a}</strong></div>` : '')}
