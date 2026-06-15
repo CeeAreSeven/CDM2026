@@ -473,7 +473,7 @@ window._saveProno = function(matchId, side, val) {
   const a = side==='a' ? val : cur.a;
   saveProno(matchId, currentPlayer, h===''?'':parseInt(h), a===''?'':parseInt(a));
 };
-
+window.saveResult = saveResult;
 window._saveResult = function(matchId, side, val) {
   const r = getResult(matchId);
   const h = side==='h' ? val : (r.h ?? '');
