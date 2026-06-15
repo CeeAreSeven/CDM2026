@@ -476,9 +476,12 @@ window._saveProno = function(matchId, side, val) {
 
 window._saveResult = function(matchId, side, val) {
   const r = getResult(matchId);
-  const h = side==='h' ? val : r.h;
-  const a = side==='a' ? val : r.a;
-  saveResult(matchId, h===''?'':parseInt(h), a===''?'':parseInt(a));
+  const h = side==='h' ? val : (r.h ?? '');
+  const a = side==='a' ? val : (r.a ?? '');
+  const hInt = h === '' ? null : parseInt(h);
+  const aInt = a === '' ? null : parseInt(a);
+  if (hInt === null || aInt === null || isNaN(hInt) || isNaN(aInt)) return;
+  saveResult(matchId, hInt, aInt);
 };
 
 function getAllMatches() {
